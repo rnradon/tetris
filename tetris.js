@@ -220,7 +220,7 @@ var first_time = true;
 
 function updateHighScore(){
 	if(first_time){
-		if(isNaN(localStorage.getItem("high_score"))){
+		if(isNaN(localStorage.getItem("high_score")) || typeof localStorage.getItem("high_score") == 'undefined'|| localStorage.getItem("high_score") == null){
 			player.high_score = 0;
 			localStorage.setItem("high_score",""+0);
 		}
