@@ -19,21 +19,24 @@
     <title>Tetris</title>
     <style>
       body {
-        background: #202028;
+        /*background: #202028;*/
         color: #fff;
         font-family: sans-serif;
         font-size: 2em;
         text-align: center;
+        background: url('./res/full_background_2.jpg'); 
+        background-repeat: repeat;
       }
       canvas {
         border: solid .2em #fff;
-        height: 70%;
-        background-color: rgba(158, 167, 184, 0.2);
+        height: 75%;
+        background: url('./res/background_2.jpg');
+        background-repeat: no-repeat;
 
       }
       .flex-class{
-      	display: flex;
-      	margin: auto;
+      display: flex;
+      margin: auto;
     	width: 80%;
    		padding: 2%;
    		justify-content: space-between;
@@ -62,9 +65,13 @@
             GAME OVER!<br/>
             PRESS PLAY GAME TO RESTART THE FUN.
 </div>
-	<div class = "container">
-		<div class = "row">
-			<div class = "col-md-4 col-sm-2 col-xs-2">
+	<div class = "container" >
+		<div class = "row" style="margin-top: 2%;">
+    <div class = "col-md-12 col-sm-12 col-xs-12">
+       <h1> TETRIS </h1>
+    </div>
+    <div class = "row" style="margin-top: 5%;">
+			<div class = "col-md-4 col-sm-2 col-xs-2" style=" font-size: 40px;">
 				Score<br/>
 	    		<div id="score">-</div>
 	    	</div>
@@ -74,12 +81,12 @@
     			</canvas>
     		</div>
     		
-    		<div class = "col-md-4 col-sm-2 col-xs-2">
+    		<div class = "col-md-4 col-sm-2 col-xs-2" style="font-size: 40px;">
     			High Score
     			<div id="high_score">-</div>
     		</div>
     	</div>
-    	<button id="play_button" onclick="game.init()">PLAY GAME</button>
+    	<button id="play_button" onclick="game.init()" style="background-color: rgb(211, 72, 54); margin-top: 1%">PLAY GAME</button>
     </div>
 
     <script src="tetris.js"></script>

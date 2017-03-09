@@ -2,8 +2,8 @@ var game = (function(){
 var set = true;
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
-context.fillStyle = "#FFFFFF";
-context.fill();
+// context.fillStyle = "#FFFFFF";
+// context.fill();
 context.scale(20, 20);
 
 
