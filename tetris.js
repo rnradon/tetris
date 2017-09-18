@@ -116,6 +116,7 @@ function draw() {
 	drawMatrix(player.matrix, player.pos);
 }
 
+// copy all the values from player to arena
 function merge(arena, player) {
 	player.matrix.forEach((row, y) => {
 		row.forEach((value, x) => {
@@ -269,6 +270,11 @@ const player = {
 return{
 	init:function(){
 
+		alert("'q' & 'w' to rotate the blocks. Left, Right and Down Arrow for movement. ENJOY!")
+		document.getElementById("play_again").style.display = "block";
+		document.getElementById("play_button").style.display = "none";
+
+
 		//STOP DROPPING OF SHAPES IN ARENA WHEN GAME OVER
 		set = true;
 		document.getElementById("game-over").style.display = "none";
@@ -277,15 +283,21 @@ return{
 		document.addEventListener('keydown', event => {
 			event.preventDefault();
 			if (event.keyCode === 37) {
-				playerMove(-1);
+				var left = -1
+				playerMove(left);
 			} else if (event.keyCode === 39) {
-				playerMove(1);
+				console.log(event.keyCode)
+				var right = 1
+				playerMove(right);
 			} else if (event.keyCode === 40) {
 				playerDrop();
 			} else if (event.keyCode === 81) {
-				playerRotate(-1);
+				console.log(event.keyCode)
+				var q = -1
+				playerRotate(q);
 			} else if (event.keyCode === 87) {
-				playerRotate(1);
+				var w = 1
+				playerRotate(w);
 			}
 		});
 
@@ -302,8 +314,8 @@ return{
 		}
 
 		//RESET
-		var play_button_click = document.getElementById("play_button");
-        play_button_click.addEventListener("click", playerReset());
+		// var play_button_click = document.getElementById("play_button");
+  //       play_button_click.addEventListener("click", playerReset());
 	}
 }
 
